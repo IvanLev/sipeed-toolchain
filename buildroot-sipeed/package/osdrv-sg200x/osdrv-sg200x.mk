@@ -17,7 +17,7 @@ define OSDRV_SG200X_BUILD_CMDS
 	cd $(@D) && $(MAKE) \
 		-j1 \
 		ARCH=riscv \
-		CROSS_COMPILE=riscv64-unknown-linux-gnu- \
+		CROSS_COMPILE=riscv64-unknown-linux-musl- \
 		KERNEL_DIR=$(LINUX_DIR) \
 		INSTALL_DIR=$(TARGET_DIR)/lib/modules/$(LINUX_VERSION_PROBED)/extra
 	$(INSTALL) -m 0644 -D $(BR2_EXTERNAL_SIPEED_PATH)/package/osdrv-sg200x/etc/modules-load.d/soph.conf \
